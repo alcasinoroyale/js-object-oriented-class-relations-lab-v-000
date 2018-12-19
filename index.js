@@ -29,4 +29,37 @@ class Passenger {
     this.name = name;
     store.passengers.push(this);
   }
+
+  trips() {
+    return store.trips.filter(trip => {
+      return trip.passengerId === this.id;
+    });
+  }
+
+  drivers() {
+    return this.trips().map(trip => {
+      return trip.driver();
+    });
+  }
+}
+
+class Trip {
+  constructor(driver, passenger) {
+    this.driverid = driver.id;
+    this.passenger.id = passenger.id;
+    this.id = ++tripId;
+    store.trips.push(this);
+  }
+
+  driver() {
+    return store.drivers.find(driver => {
+      return driver.id === this.driverId;
+    });
+  }
+
+  drivers() {
+    return this.trips().map(trip => {
+      return trip.driver();
+    });
+  }
 }
