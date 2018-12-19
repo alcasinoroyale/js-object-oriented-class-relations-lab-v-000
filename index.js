@@ -45,8 +45,8 @@ class Passenger {
 
 class Trip {
   constructor(driver, passenger) {
-    this.driverid = driver.id;
-    this.passenger.id = passenger.id;
+    this.driverId = driver.id;
+    this.passenger.Id = passenger.id;
     this.id = ++tripId;
     store.trips.push(this);
   }
