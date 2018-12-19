@@ -58,7 +58,7 @@ class Trip {
   }
 
   passenger() {
-    return store.passengers.find.map(passenger => {
+    return store.passengers.find(passenger => {
       return passenger.id === this.passengerId;
     });
   }
